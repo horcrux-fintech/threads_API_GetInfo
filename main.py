@@ -46,9 +46,6 @@ def main():
 
         print(f"[{i}/{total}] 已處理：ID={media_id} | 讚={row['likes']} 回覆={row['replies']} 觀看={row['views']}")
         time.sleep(0.15)
-        
-        if i == 10:
-            break
 
     # 匯出 Excel
     stamp = datetime.now().strftime("%Y%m%d")
