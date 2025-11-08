@@ -26,11 +26,11 @@ jobs:
 
       - name: Install dependencies
         run: |
-          pip install pyinstaller --name threads_api_cli
+          pip install pyinstaller
 
       - name: Build application
         run: |
-          pyinstaller --onefile main.py
+          pyinstaller --onefile main.py --name threads_api_cli
 
       - name: Archive artifacts
         uses: actions/upload-artifact@v4
