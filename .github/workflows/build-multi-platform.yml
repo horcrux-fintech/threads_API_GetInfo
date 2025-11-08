@@ -33,7 +33,7 @@ jobs:
           pyinstaller --onefile main.py
 
       - name: Archive artifacts
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: hello-executable-${{ matrix.os }}
           path: dist/hello${{ matrix.os == 'windows-latest' && '.exe' || '' }}
