@@ -17,16 +17,16 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Set up Python
-        uses: actions/setup-python@v3
+        uses: actions/setup-python@v5
         with:
           python-version: ${{ matrix.python-version }}
 
       - name: Install dependencies
         run: |
-          pip install pyinstaller
+          pip install pyinstaller --name threads_api_cli
 
       - name: Build application
         run: |
@@ -35,5 +35,5 @@ jobs:
       - name: Archive artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: hello-executable-${{ matrix.os }}
-          path: dist/hello${{ matrix.os == 'windows-latest' && '.exe' || '' }}
+          name: threads-api-${{ matrix.os }}
+          path: dist/threads_api_cli${{ matrix.os == 'windows-latest' && '.exe' || '' }}
