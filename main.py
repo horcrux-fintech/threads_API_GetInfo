@@ -58,3 +58,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+    input("\n按下 Enter 鍵以結束程式...")
